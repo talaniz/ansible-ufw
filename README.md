@@ -1,5 +1,7 @@
-Ansible UFW https://travis-ci.org/talaniz/ansible-ufw.svg?branch=master
+Ansible UFW
 =========
+
+https://travis-ci.org/talaniz/ansible-ufw.svg?branch=master
 
 A simple role to manage the Ubuntu UFW for my blog project.
 
