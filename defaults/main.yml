@@ -1,0 +1,6 @@
+---
+access_ports:
+  - 80
+  - 443
+  - 22
+ssh_port: 22

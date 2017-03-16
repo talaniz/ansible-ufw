@@ -1,0 +1,24 @@
+---
+- name: Allow tcp on ports
+  ufw:
+    rule: allow
+    port: '{{item}}'
+    proto: tcp
+  with_items: '{{access_ports}}'
+
+- name: Set rate limit on ssh port
+  ufw:
+    rule: limit
+    port: '{{ssh_port}}'
+
+- name: Check firewall rules
+  command: ufw show added
+  register: firewall_rules
+
+- debug:
+    msg: "UFW status = {{firewall_rules.stdout}}"
+
+- name: Start/reload ufw
+  ufw:
+    state: enabled
+    policy: deny
